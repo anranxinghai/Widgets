@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WidgetsActivity">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hello World!" />
+
+        <com.pinguo.camera360.ui.view.CircleProgressBar
+            android:id="@+id/circleProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:backgroundColor="#FFFFFF"
+            app:circleWidth="2dp"
+            app:progressColor="#FF0000"
+            app:triangleColor="#00FFFF" />
+
+        <com.pinguo.camera360.camera.view.focusView.HorizontalSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_margin="40dp"
+            app:markerBackground="#FFD400" />
+
+        <com.pinguo.camera360.ui.view.DotExtendableView
+            android:id="@+id/dot"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/holo_green_dark" />
+
+        <com.pinguo.camera360.ui.view.SlideSelectorView
+            android:layout_width="100dp"
+            android:layout_height="70dp" />
+
+        <com.pinguo.camera360.camera.view.focusView.VerticalSeekBar
+            android:layout_width="50dp"
+            android:layout_height="200dp"
+            app:lineColor="#FFD400"
+            app:markerBackground="@drawable/pg_focus_icon" />
+
+        <com.pinguo.camera360.camera.view.focusView.PGFocusCircle
+            android:id="@+id/fvCircle"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+        <com.pinguo.camera360.camera.view.focusView.PGFocusSquare
+            android:id="@+id/fvSquare"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lineColor="#FFD400" />
+        <com.pinguo.camera360.camera.view.focusView.PGFocusRect
+            android:id="@+id/fvRect"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lineColor="#FF0000" />
+        <com.pinguo.camera360.camera.view.focusView.PGBlurView
+            android:id="@+id/fvBlur"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            app:lineColor="#FF0000" />
+
+
+        <com.pinguo.camera360.camera.view.focusView.HorizontalSeekBar
+            android:id="@+id/distanceSeekBar"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            app:markerBackground="#FFD400"/>
+        <com.pinguo.camera360.camera.view.focusView.HorizontalSeekBar
+            android:id="@+id/degreeSeekBar"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            app:markerBackground="#FFD400"/>
+        <com.pinguo.camera360.ui.view.RoundRevealView
+            android:id="@+id/rrvImage"
+            android:layout_width="300dp"
+            android:layout_height="400dp"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</ScrollView>

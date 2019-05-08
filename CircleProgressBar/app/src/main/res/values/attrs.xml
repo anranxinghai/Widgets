@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="lineColor" format = "color" />
+    <declare-styleable name="CircleProgressBar">
+        <attr name="circleWidth" format="dimension" />
+        <attr name="betaAngle" format="integer" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="triangleColor" format="color" />
+        <attr name="progressColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="PGSeekBar">
+        <attr name="markerBackground" format = "reference|color" />
+        <attr name="lineColor" />
+    </declare-styleable>
+    <declare-styleable name="PGFocusShape">
+        <attr name="shapeColor" format = "color" />
+        <attr name="lineColor" />
+    </declare-styleable>
+    <declare-styleable name="PGBlurView">
+        <attr name="lineColor" />
+    </declare-styleable>
+</resources>

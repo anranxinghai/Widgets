@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pinguo.camera360.camera.view.focusView.PGFocusView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pg_focus_lock_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingTop="3dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="3dp"
+        android:text="自动曝光/自动对焦已锁定"
+        android:textColor="#ffd400"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <com.pinguo.camera360.camera.view.focusView.PGFocusCircle
+        android:id="@+id/pg_focus_circle"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:layout_centerInParent="true"
+        app:lineColor="#FFD400"
+        android:padding="2dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <com.pinguo.camera360.camera.view.focusView.VerticalSeekBar
+        android:id="@+id/pg_focus_exposure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/pg_focus_circle"
+        android:visibility="invisible"
+        app:lineColor="#FFD400"
+        app:markerBackground="@drawable/pg_focus_icon"
+        tools:visibility="visible" />
+
+    <com.pinguo.camera360.camera.view.focusView.PGBlurView
+        android:id="@+id/pg_focus_blur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <com.pinguo.camera360.camera.view.focusView.PGFocusRect
+        android:id="@+id/pg_focus_rect"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <com.pinguo.camera360.camera.view.focusView.HorizontalSeekBar
+        android:id="@+id/pg_focus_distance"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        app:markerBackground="#FFD400"
+        tools:visibility="visible" />
+
+</com.pinguo.camera360.camera.view.focusView.PGFocusView>

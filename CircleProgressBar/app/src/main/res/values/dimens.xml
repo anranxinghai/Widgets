@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="blur_circle_diameter">215dp</dimen>
+    <dimen name="focus_circle_radius">122dp</dimen>
+</resources>
