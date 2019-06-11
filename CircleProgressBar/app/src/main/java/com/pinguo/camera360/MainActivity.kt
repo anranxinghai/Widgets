@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.jni -> {
                 intent.setClass(this, JNIActivity::class.java)
             }
+            R.id.opengl -> {
+                intent.setClass(this, OpenGLActivity::class.java)
+            }
         }
         startActivity(intent)
     }
@@ -34,6 +37,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         camerax.setOnClickListener(this)
         widgets.setOnClickListener(this)
         jni.setOnClickListener(this)
+        opengl.setOnClickListener(this)
     }
 
 
