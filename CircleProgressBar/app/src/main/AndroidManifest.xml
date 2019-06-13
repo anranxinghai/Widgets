@@ -26,7 +26,8 @@
             android:theme="@style/Theme.AppCompat"/>
         <activity android:name=".JNIActivity"
             android:theme="@style/Theme.AppCompat"/>
-        <activity android:name=".OpenGLActivity">
+        <activity android:name=".OpenGLActivity"
+            android:theme="@style/Theme.AppCompat">
         </activity>
     </application>
 
