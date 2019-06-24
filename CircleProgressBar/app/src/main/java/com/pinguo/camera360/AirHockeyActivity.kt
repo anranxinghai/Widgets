@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 
-class OpenGLActivity : AppCompatActivity() {
+class AirHockeyActivity : AppCompatActivity() {
 
     private var glSurfaceView:GLSurfaceView? = null
     private var renderSet = false
@@ -20,7 +20,7 @@ class OpenGLActivity : AppCompatActivity() {
         Log.i("OpenGL","GLES version:${configurationInfo.glEsVersion} $supportES2")
         if(supportES2){
             glSurfaceView!!.setEGLContextClientVersion(2)
-            glSurfaceView?.setRenderer(FirstOpenGLProjectRender())
+            glSurfaceView?.setRenderer(AirHockeyRender())
         }
         setContentView(glSurfaceView)
     }

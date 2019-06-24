@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
                 intent.setClass(this, JNIActivity::class.java)
             }
             R.id.opengl -> {
-                intent.setClass(this, OpenGLActivity::class.java)
+                intent.setClass(this, AirHockeyActivity::class.java)
             }
         }
         startActivity(intent)
