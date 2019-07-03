@@ -20,7 +20,7 @@ class AirHockeyActivity : AppCompatActivity() {
         Log.i("OpenGL","GLES version:${configurationInfo.glEsVersion} $supportES2")
         if(supportES2){
             glSurfaceView!!.setEGLContextClientVersion(2)
-            glSurfaceView?.setRenderer(AirHockeyRender())
+            glSurfaceView?.setRenderer(AirHockeyRender(this))
         }
         setContentView(glSurfaceView)
     }
