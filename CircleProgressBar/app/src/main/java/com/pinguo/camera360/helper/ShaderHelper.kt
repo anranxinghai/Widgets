@@ -22,7 +22,7 @@ object ShaderHelper {
         val compileStatus = IntArray(1)
         glGetShaderiv(shaderObjectId, GL_COMPILE_STATUS,compileStatus,0)
         Log.v(TAG,"Results of compiling source:\n$shaderCode\n${glGetShaderInfoLog(shaderObjectId)}")
-        if (compileStatus[0] ==0){
+        if (compileStatus[0] == 0){
             glDeleteShader(shaderObjectId)
             Log.w(TAG,"Compilation of shader failed.")
             return 0
@@ -32,7 +32,7 @@ object ShaderHelper {
 
     fun linkProgram(vertexShaderId:Int,fragmentShaderId:Int):Int{
         val programObjectId = glCreateProgram()
-        if (programObjectId ==0){
+        if (programObjectId == 0){
             Log.w(TAG,"Could not create new program")
             return 0
         }
