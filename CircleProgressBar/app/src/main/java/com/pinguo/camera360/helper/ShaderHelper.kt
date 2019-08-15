@@ -57,7 +57,7 @@ object ShaderHelper {
         Log.v(TAG,"Results of validate program:${validateStatus[0]} \nLog:${glGetProgramInfoLog(programObjectId)}")
         if (validateStatus[0] == 0){
             glDeleteProgram(programObjectId)
-            Log.w(TAG,"Link of shader failed.")
+            Log.w(TAG,"Validate of shader failed.")
             return false
         }
         return validateStatus[0] != 0
