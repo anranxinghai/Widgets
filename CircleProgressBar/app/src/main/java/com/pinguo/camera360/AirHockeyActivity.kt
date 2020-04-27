@@ -21,7 +21,9 @@ class AirHockeyActivity : AppCompatActivity() {
         if(supportES2){
             glSurfaceView!!.setEGLContextClientVersion(2)
             glSurfaceView?.setRenderer(AirHockeyRender(this))
+            renderSet = true
         }
+        //ContentView 整个设置为 glSurfaceView
         setContentView(glSurfaceView)
     }
 
@@ -37,5 +39,9 @@ class AirHockeyActivity : AppCompatActivity() {
         if (renderSet) {
             glSurfaceView?.onResume()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
