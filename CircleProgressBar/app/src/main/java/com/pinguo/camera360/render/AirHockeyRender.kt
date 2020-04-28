@@ -25,7 +25,7 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     private val projectionMatrix = FloatArray(16)
     private var uMatrixLocation:Int = 0
     companion object {
-        const val POSITION_COMPONENT_COUNT = 2
+        const val POSITION_COMPONENT_COUNT = 4
         const val COLOR_COMPONENT_COUNT = 3
         const val BYTES_PER_FLOAT = 4 //一个float 32位精度，4个字节
         const val STRIDE = (POSITION_COMPONENT_COUNT + COLOR_COMPONENT_COUNT) * BYTES_PER_FLOAT
@@ -35,19 +35,19 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     constructor(context: Context) {
         this.context = context
         val tableVerticesWithTriangles = floatArrayOf(
-                   0f,    0f,  1f,  1f,  1f,
-                -0.5f, -0.8f,0.7f,0.7f,0.7f,
-                 0.5f, -0.8f,0.7f,0.7f,0.7f,
+                 0.0f,  0.0f, 0.0f, 1.5f, 1.0f, 1.0f, 1.0f,
+                -0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
+                 0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
 
-                 0.5f,  0.8f,0.7f,0.7f,0.7f,
-                -0.5f,  0.8f,0.7f,0.7f,0.7f,
-                -0.5f, -0.8f,0.7f,0.7f,0.7f,
+                 0.5f,  0.8f, 0.0f, 2.0f, 0.7f, 0.7f, 0.7f,
+                -0.5f,  0.8f, 0.0f, 2.0f, 0.7f, 0.7f, 0.7f,
+                -0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
 
-                -0.5f,    0f,  1f,  0f,  0f,
-                 0.5f,    0f,  1f,  0f,  0f,
+                -0.5f,  0.0f, 0.0f, 1.5f, 1.0f, 0.0f, 0.0f,
+                 0.5f,  0.0f, 0.0f, 1.5f, 1.0f, 0.0f, 0.0f,
 
-                   0f,-0.4f,  0f,  0f,  1f,
-                   0f, 0.4f,  1f,  0f,  0f
+                 0.0f, -0.4f,  0.0f, 1.25f, 0.0f, 0.0f,  1.0f,
+                 0.0f,  0.4f,  0.0f, 1.75f, 1.0f, 0.0f,  0.0f
         )
         vertexData = ByteBuffer.allocateDirect(tableVerticesWithTriangles.size * BYTES_PER_FLOAT)//分配Native空间
                 .order(ByteOrder.nativeOrder())//保证顺序一致
