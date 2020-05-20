@@ -3,8 +3,10 @@ package com.pinguo.camera360
 import android.content.Context
 import android.opengl.GLES20.*
 import android.opengl.GLSurfaceView
-import android.opengl.Matrix.orthoM
+import android.opengl.Matrix
+import android.opengl.Matrix.multiplyMM
 import com.pinguo.camera360.helper.ShaderHelper
+import com.pinguo.camera360.util.MatrixHelper
 import com.pinguo.camera360.util.TextResourceReader
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -24,8 +26,10 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     private var aPositionLocation:Int = 0
     private val projectionMatrix = FloatArray(16)
     private var uMatrixLocation:Int = 0
+    private val modelMatrix = FloatArray(16)
+
     companion object {
-        const val POSITION_COMPONENT_COUNT = 4
+        const val POSITION_COMPONENT_COUNT = 2
         const val COLOR_COMPONENT_COUNT = 3
         const val BYTES_PER_FLOAT = 4 //一个float 32位精度，4个字节
         const val STRIDE = (POSITION_COMPONENT_COUNT + COLOR_COMPONENT_COUNT) * BYTES_PER_FLOAT
@@ -35,19 +39,19 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     constructor(context: Context) {
         this.context = context
         val tableVerticesWithTriangles = floatArrayOf(
-                 0.0f,  0.0f, 0.0f, 1.5f, 1.0f, 1.0f, 1.0f,
-                -0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
-                 0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
+                 0.0f,  0.0f, /*0.0f, 1.5f,*/ 1.0f, 1.0f, 1.0f,
+                -0.5f, -0.8f, /*0.0f, 1.0f,*/ 0.7f, 0.7f, 0.7f,
+                 0.5f, -0.8f, /*0.0f, 1.0f,*/ 0.7f, 0.7f, 0.7f,
 
-                 0.5f,  0.8f, 0.0f, 2.0f, 0.7f, 0.7f, 0.7f,
-                -0.5f,  0.8f, 0.0f, 2.0f, 0.7f, 0.7f, 0.7f,
-                -0.5f, -0.8f, 0.0f, 1.0f, 0.7f, 0.7f, 0.7f,
+                 0.5f,  0.8f, /*0.0f, 2.0f,*/ 0.7f, 0.7f, 0.7f,
+                -0.5f,  0.8f, /*0.0f, 2.0f,*/ 0.7f, 0.7f, 0.7f,
+                -0.5f, -0.8f, /*0.0f, 1.0f,*/ 0.7f, 0.7f, 0.7f,
 
-                -0.5f,  0.0f, 0.0f, 1.5f, 1.0f, 0.0f, 0.0f,
-                 0.5f,  0.0f, 0.0f, 1.5f, 1.0f, 0.0f, 0.0f,
+                -0.5f,  0.0f, /*0.0f, 1.5f,*/ 1.0f, 0.0f, 0.0f,
+                 0.5f,  0.0f, /*0.0f, 1.5f,*/ 1.0f, 0.0f, 0.0f,
 
-                 0.0f, -0.4f,  0.0f, 1.25f, 0.0f, 0.0f,  1.0f,
-                 0.0f,  0.4f,  0.0f, 1.75f, 1.0f, 0.0f,  0.0f
+                 0.0f, -0.4f, /* 0.0f, 1.25f,*/ 0.0f, 0.0f,  1.0f,
+                 0.0f,  0.4f, /* 0.0f, 1.75f,*/ 1.0f, 0.0f,  0.0f
         )
         vertexData = ByteBuffer.allocateDirect(tableVerticesWithTriangles.size * BYTES_PER_FLOAT)//分配Native空间
                 .order(ByteOrder.nativeOrder())//保证顺序一致
@@ -84,11 +88,18 @@ class AirHockeyRender : GLSurfaceView.Renderer {
         //设置OpenGL 视点填充满整个surface
         glViewport(0, 0, width, height)
         val aspectRatio = if(width > height) width.toFloat() / height.toFloat() else height.toFloat() / width.toFloat()
-        if (width > height) orthoM(projectionMatrix,0,-aspectRatio,aspectRatio,-1f,1f,-1f,1f)
-        else orthoM(projectionMatrix,0,-1f,1f,-aspectRatio,aspectRatio,-1f,1f)
-
-
-
+        /*if (width > height) orthoM(projectionMatrix,0,-aspectRatio,aspectRatio,-1f,1f,-1f,1f)
+        else orthoM(projectionMatrix,0,-1f,1f,-aspectRatio,aspectRatio,-1f,1f)*/
+        Matrix.setIdentityM(modelMatrix, 0)
+        Matrix.translateM(modelMatrix, 0, 0f, 0f, -2f)
+        Matrix.setIdentityM(modelMatrix, 0)
+        Matrix.translateM(modelMatrix, 0, 0f, 0f, -1.5f)
+        MatrixHelper.perspectiveM(projectionMatrix,45f,aspectRatio,1f,10f)
+//        perspectiveM(projectionMatrix,0,45f,width/height.toFloat(),1f,10f)
+//        orthoM(projectionMatrix,0,-aspectRatio,aspectRatio,-1f,1f,-1f,1f)
+        val temp = FloatArray(16)
+        multiplyMM(temp,0,projectionMatrix,0,modelMatrix,0)
+        System.arraycopy(temp,0,projectionMatrix,0,temp.size)
     }
     //每一帧绘制，都会回调
     override fun onDrawFrame(gl: GL10?) {
