@@ -94,6 +94,7 @@ class AirHockeyRender : GLSurfaceView.Renderer {
         Matrix.translateM(modelMatrix, 0, 0f, 0f, -2f)
         Matrix.setIdentityM(modelMatrix, 0)
         Matrix.translateM(modelMatrix, 0, 0f, 0f, -1.5f)
+        Matrix.rotateM(modelMatrix,0,-60f,1f,0f,0f)
         MatrixHelper.perspectiveM(projectionMatrix,45f,aspectRatio,1f,10f)
 //        perspectiveM(projectionMatrix,0,45f,width/height.toFloat(),1f,10f)
 //        orthoM(projectionMatrix,0,-aspectRatio,aspectRatio,-1f,1f,-1f,1f)
