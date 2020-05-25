@@ -83,7 +83,7 @@
             android:layout_height="40dp"
             app:markerBackground="#FFD400"/>
         <com.pinguo.camera360.ui.view.RoundRevealView
-            android:id="@+id/rrvImage"
+            android:id="@+id/rvImage"
             android:layout_width="300dp"
             android:layout_height="400dp"/>
 

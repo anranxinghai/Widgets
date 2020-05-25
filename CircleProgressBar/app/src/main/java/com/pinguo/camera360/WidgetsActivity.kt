@@ -26,8 +26,8 @@ class WidgetsActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.fvRect->{
                 fvRect.startDrawAnimation()
             }
-            R.id.rrvImage->{
-                rrvImage.startReveal()
+            R.id.rvImage->{
+                rvImage.startReveal()
             }
         }
     }
@@ -52,8 +52,8 @@ class WidgetsActivity : AppCompatActivity() ,View.OnClickListener{
         fvSquare.setOnClickListener(this)
         fvCircle.setOnClickListener(this)
         fvRect.setOnClickListener(this)
-        rrvImage.setOnClickListener(this)
-        rrvImage.setBitmap(BitmapFactory.decodeResource(resources, R.drawable.input))
+        rvImage.setOnClickListener(this)
+        rvImage.setBitmap(BitmapFactory.decodeResource(resources, R.drawable.input))
         distanceSeekBar.setOnSeekBarChangeListener(object : PGSeekBar.OnSeekBarChangeListener{
 
             override fun onSeekRateChanged(seekBar: PGSeekBar, rate: Float) {
