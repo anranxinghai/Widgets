@@ -1,4 +1,4 @@
-package com.pinguo.camera360.util
+package com.pinguo.camera360.gl.util
 
 object MatrixHelper {
     fun perspectiveM(m:FloatArray,yFovInDegress:Float,aspect:Float,n:Float,f:Float){

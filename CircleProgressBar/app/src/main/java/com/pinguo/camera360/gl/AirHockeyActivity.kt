@@ -1,4 +1,4 @@
-package com.pinguo.camera360
+package com.pinguo.camera360.gl
 
 import android.app.ActivityManager
 import android.content.Context
@@ -6,6 +6,7 @@ import android.opengl.GLSurfaceView
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.pinguo.camera360.gl.render.AirHockeyRender
 
 class AirHockeyActivity : AppCompatActivity() {
 

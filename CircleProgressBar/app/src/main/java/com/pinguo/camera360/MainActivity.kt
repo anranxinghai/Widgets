@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
+import com.pinguo.camera360.gl.AirHockeyActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import us.pinguo.foundation.utils.Util
 

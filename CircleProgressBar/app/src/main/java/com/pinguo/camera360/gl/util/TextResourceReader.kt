@@ -1,4 +1,4 @@
-package com.pinguo.camera360.util
+package com.pinguo.camera360.gl.util
 
 import android.content.Context
 import java.io.BufferedReader

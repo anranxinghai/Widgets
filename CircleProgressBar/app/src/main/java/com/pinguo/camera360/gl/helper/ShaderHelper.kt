@@ -1,4 +1,4 @@
-package com.pinguo.camera360.helper
+package com.pinguo.camera360.gl.helper
 
 import android.opengl.GLES20.*
 import android.util.Log
@@ -6,12 +6,12 @@ import android.util.Log
 object ShaderHelper {
     private val TAG = "ShaderHelper"
     fun compilVertexShader(shaderCode:String):Int{
-        return compilShader(GL_VERTEX_SHADER,shaderCode)
+        return compileShader(GL_VERTEX_SHADER,shaderCode)
     }
     fun compilFragmentShader(shaderCode:String):Int{
-        return compilShader(GL_FRAGMENT_SHADER,shaderCode)
+        return compileShader(GL_FRAGMENT_SHADER,shaderCode)
     }
-    fun compilShader(type:Int,shaderCode:String):Int{
+    fun compileShader(type:Int,shaderCode:String):Int{
         val shaderObjectId = glCreateShader(type)//创建Shader对象
         if (shaderObjectId == 0){
             Log.w(TAG,"Could not create new shader")
@@ -63,5 +63,13 @@ object ShaderHelper {
             return false
         }
         return validateStatus[0] != 0
+    }
+
+    fun buildProgram(vertexShaderSource:String,fragmentShaderSource:String):Int{
+        val vertexShader = compilVertexShader(vertexShaderSource)
+        val fragmentShader = compilFragmentShader(fragmentShaderSource)
+        val program = linkProgram(vertexShader,fragmentShader)
+        validatePrograme(program)
+        return program
     }
 }

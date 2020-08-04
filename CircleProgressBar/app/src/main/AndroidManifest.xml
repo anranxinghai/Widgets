@@ -26,7 +26,7 @@
             android:theme="@style/Theme.AppCompat"/>
         <activity android:name=".JNIActivity"
             android:theme="@style/Theme.AppCompat"/>
-        <activity android:name=".AirHockeyActivity"
+        <activity android:name=".gl.AirHockeyActivity"
             android:theme="@style/Theme.AppCompat">
         </activity>
     </application>
