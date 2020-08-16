@@ -12,14 +12,12 @@ import com.pinguo.camera360.gl.programs.ColorShaderProgram
 import com.pinguo.camera360.gl.programs.TextureShaderProgram
 import com.pinguo.camera360.gl.util.MatrixHelper
 import com.pinguo.camera360.gl.util.TextureHelper
-import java.nio.FloatBuffer
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
 class AirHockeyRender : GLSurfaceView.Renderer {
     //用来在本地内存中存储数据
-    private var vertexData:FloatBuffer? = null
-    private var context:Context
+    private val context:Context
     private val projectionMatrix = FloatArray(16)
     private val modelMatrix = FloatArray(16)
 
