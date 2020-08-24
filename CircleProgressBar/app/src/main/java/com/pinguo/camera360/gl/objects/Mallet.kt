@@ -9,14 +9,14 @@ import com.pinguo.camera360.gl.programs.ColorShaderProgram
 class Mallet {
     companion object {
         const val POSITION_COMPONENT_COUNT = 2
-        const val COLOR_COMPONENT_COUNT = 3
+        const val COLOR_COMPONENT_COUNT = /*4*/3
         const val STRIDE = (POSITION_COMPONENT_COUNT + COLOR_COMPONENT_COUNT) * BYTES_PER_FLOAT
 
 
         val VERTEX_DATA = floatArrayOf(
-                //Order of coordinates:X,Y,R,G,B
-                0.0f, -0.4f, 0f, 0f,1f,
-                0.0f, 0.4f, 1.0f, 0f,0f
+                //Order of coordinates:X,Y,A,R,G,B
+                0.0f, -0.4f,/*1.0f,*/ 0f, 0f,1f,
+                0.0f, 0.4f,/*1.0f,*/ 1.0f, 0f,0f
         )
     }
 
