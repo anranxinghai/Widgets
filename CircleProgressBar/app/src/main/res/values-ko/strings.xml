@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="camerax">카메라 X</string>
+    <string name="widgets">위젯</string>
+    <string name="jni">자바 인터페이스</string>
+    <string name="opengl">Open GL</string>
+    </resources>

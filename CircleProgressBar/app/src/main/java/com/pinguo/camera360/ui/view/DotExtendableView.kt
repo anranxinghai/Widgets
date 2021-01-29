@@ -37,9 +37,7 @@ class DotExtendableView : View {
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-//        if (ApiHelper.AFTER_HONEYCOMB) {
         closeHardwareAccelerated()
-//        }
         mAccelerateDecelerateInterpolator = AccelerateDecelerateInterpolator()
         mScroller = ScrollerCompat.create(context, mAccelerateDecelerateInterpolator)
         linePaint = Paint()

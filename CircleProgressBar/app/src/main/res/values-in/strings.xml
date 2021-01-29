@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="camerax">Kamera X</string>
+    <string name="widgets">Widget</string>
+    <string name="jni">Antarmuka Java</string>
+    <string name="opengl">Buka GL</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="camerax">相机X</string>
+    <string name="widgets">窗口部件</string>
+    <string name="jni">Java接口</string>
+    <string name="opengl">Open GL</string>
+</resources>

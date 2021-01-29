@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="camerax">Cámara X</string>
+    <string name="widgets">Widget</string>
+    <string name="jni">Interfaz Java</string>
+    <string name="opengl">Abrir GL</string>
+</resources>

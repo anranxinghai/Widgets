@@ -9,24 +9,24 @@
         android:id="@+id/camerax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="camerax"/>
+        android:text="@string/camerax"/>
 
     <Button
         android:id="@+id/widgets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="widgets"/>
+        android:text="@string/widgets"/>
 
     <Button
         android:id="@+id/jni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="jni"/>
+        android:text="@string/jni"/>
 
     <Button
         android:id="@+id/opengl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="opengl"/>
+        android:text="@string/opengl"/>
 
 </LinearLayout>
