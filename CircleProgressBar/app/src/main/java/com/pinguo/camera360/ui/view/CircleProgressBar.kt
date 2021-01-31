@@ -4,14 +4,13 @@ import android.animation.ValueAnimator
 import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.*
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Build
-import android.support.annotation.RequiresApi
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.OvershootInterpolator
+import androidx.annotation.RequiresApi
 import com.pinguo.camera360.R
 
 

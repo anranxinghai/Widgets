@@ -2,11 +2,11 @@ package com.pinguo.camera360.ui.view
 
 import android.content.Context
 import android.graphics.*
-import android.support.v4.widget.ScrollerCompat
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.core.widget.ScrollerCompat
 import com.pinguo.camera360.R
 import us.pinguo.foundation.utils.Util
 

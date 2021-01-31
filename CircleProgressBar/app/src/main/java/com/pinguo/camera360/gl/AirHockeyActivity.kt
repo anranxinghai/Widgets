@@ -4,8 +4,8 @@ import android.app.ActivityManager
 import android.content.Context
 import android.opengl.GLSurfaceView
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.pinguo.camera360.gl.render.AirHockeyRender
 
 class AirHockeyActivity : AppCompatActivity() {

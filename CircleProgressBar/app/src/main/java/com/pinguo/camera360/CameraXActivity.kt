@@ -1,13 +1,15 @@
 package com.pinguo.camera360
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.view.*
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.pinguo.camera360.camera.view.focusView.PGFocusView
 import com.pinguo.camera360.camera.view.focusView.gesture.RotateGestureDetector
 import kotlinx.android.synthetic.main.activity_camerax.*
 import us.pinguo.foundation.utils.Util
-import java.lang.Exception
 
 class CameraXActivity : AppCompatActivity(), GestureDetector.OnGestureListener, ScaleGestureDetector.OnScaleGestureListener, RotateGestureDetector.OnRotateGestureListener {
 

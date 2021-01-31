@@ -1,8 +1,9 @@
 package com.pinguo.camera360;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class JNIActivity extends AppCompatActivity {

@@ -2,15 +2,14 @@ package com.pinguo.camera360.ui.view
 
 import android.annotation.TargetApi
 import android.content.Context
-import android.graphics.*
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.os.Build
-import android.support.v4.widget.ScrollerCompat
-import android.text.TextUtils
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.core.widget.ScrollerCompat
 
 /**
  * <pre>
