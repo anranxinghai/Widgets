@@ -1,4 +1,4 @@
-#version 120
+
 uniform mat4 u_Matrix;
 attribute vec4 a_Position;
 attribute vec2 a_TextureCoordinates;
