@@ -1,4 +1,4 @@
-
+//顶点着色器（Vertex Shader）
 uniform mat4 u_Matrix;
 attribute vec4 a_Position;
 attribute vec4 a_Color;
