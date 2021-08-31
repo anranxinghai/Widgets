@@ -4,14 +4,14 @@ import android.opengl.GLES20.*
 import android.util.Log
 
 object ShaderHelper {
-    private val TAG = "ShaderHelper"
-    fun compilVertexShader(shaderCode:String):Int{
+    private const val TAG = "ShaderHelper"
+    private fun compileVertexShader(shaderCode:String):Int{
         return compileShader(GL_VERTEX_SHADER,shaderCode)
     }
-    fun compilFragmentShader(shaderCode:String):Int{
+    private fun compileFragmentShader(shaderCode:String):Int{
         return compileShader(GL_FRAGMENT_SHADER,shaderCode)
     }
-    fun compileShader(type:Int,shaderCode:String):Int{
+    private fun compileShader(type:Int, shaderCode:String):Int{
         val shaderObjectId = glCreateShader(type)//创建Shader对象
         if (shaderObjectId == 0){
             Log.w(TAG,"Could not create new shader")
@@ -31,7 +31,7 @@ object ShaderHelper {
     }
 
     //链接顶点Shader和片段Shader
-    fun linkProgram(vertexShaderId:Int,fragmentShaderId:Int):Int{
+    private fun linkProgram(vertexShaderId:Int,fragmentShaderId:Int):Int{
         val programObjectId = glCreateProgram()//创建程序
         if (programObjectId == 0){
             Log.w(TAG,"Could not create new program")
@@ -51,7 +51,7 @@ object ShaderHelper {
         return programObjectId
     }
     //验证程序
-    fun validatePrograme(programObjectId:Int):Boolean{
+    private fun validateProgramme(programObjectId:Int):Boolean{
         glValidateProgram(programObjectId)
         val validateStatus = IntArray(1)
         glGetProgramiv(programObjectId, GL_VALIDATE_STATUS,validateStatus,0)
@@ -66,10 +66,10 @@ object ShaderHelper {
     }
 
     fun buildProgram(vertexShaderSource:String,fragmentShaderSource:String):Int{
-        val vertexShader = compilVertexShader(vertexShaderSource)
-        val fragmentShader = compilFragmentShader(fragmentShaderSource)
+        val vertexShader = compileVertexShader(vertexShaderSource)
+        val fragmentShader = compileFragmentShader(fragmentShaderSource)
         val program = linkProgram(vertexShader,fragmentShader)
-        validatePrograme(program)
+        validateProgramme(program)
         return program
     }
 }
