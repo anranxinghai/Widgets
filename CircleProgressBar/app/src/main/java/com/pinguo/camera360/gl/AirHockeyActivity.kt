@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.pinguo.camera360.R
-import com.pinguo.camera360.gl.render.BackgroundBlurRender
+import com.pinguo.camera360.gl.render.AirHockeyRender
 
 class AirHockeyActivity : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class AirHockeyActivity : AppCompatActivity() {
         Log.i("OpenGL","GLES version:${configurationInfo.glEsVersion} $supportES2")
         if(supportES2){
             glSurfaceView?.setEGLContextClientVersion(2)
-            glSurfaceView?.setRenderer(BackgroundBlurRender(this))
+            glSurfaceView?.setRenderer(AirHockeyRender(this))
             renderSet = true
         }
         //ContentView 整个设置为 glSurfaceView

@@ -5,9 +5,9 @@ import com.pinguo.camera360.gl.programs.ColorShaderProgram
 import com.pinguo.camera360.gl.util.Geometry
 
 /**
- * 冰锤
+ * 冰球
  */
-class Mallet {
+class Puck {
     companion object {
         const val POSITION_COMPONENT_COUNT = 3
     }
@@ -18,8 +18,8 @@ class Mallet {
     private var vertexArray: VertexArray
     private val drawList: List<ObjectBuilder.Companion.DrawCommand>
 
-    constructor(radius: Float, height: Float, numPointsAroundMallet: Int) {
-        val generatedData = ObjectBuilder.createMallet(Geometry.Point(0f, 0f, 0f), radius, height, numPointsAroundMallet)
+    constructor(radius: Float, height: Float, numPointsAroundPuck: Int) {
+        val generatedData = ObjectBuilder.createPuck(Geometry.Cylinder(Geometry.Point(0f, 0f, 0f), radius, height), numPointsAroundPuck)
         this.radius = radius
         this.height = height
         vertexArray = VertexArray(generatedData.vertexData)

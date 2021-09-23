@@ -7,7 +7,6 @@ import android.opengl.GLSurfaceView
 import android.os.Environment
 import com.pinguo.camera360.gl.objects.Screen
 import com.pinguo.camera360.gl.programs.BackgroundBlurShaderProgram
-import com.pinguo.camera360.gl.util.TextureHelper
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
@@ -33,10 +32,10 @@ class BackgroundBlurRender(val context: Context) : GLSurfaceView.Renderer {
         glClearColor(0f, 0f, 0f, 0f)
         screen = Screen()
         backgroundBlurShaderProgram = BackgroundBlurShaderProgram(context)
-        originImageTexture = TextureHelper.loadTexture(mainImage)
-        shapeImageTexture = TextureHelper.loadTexture(shapeImage)
-        maskImageTexture = TextureHelper.loadTexture(maskImage)
-        maskImageExternTexture = TextureHelper.loadTexture(maskExternImage)
+//        originImageTexture = TextureHelper.loadTexture(mainImage)
+//        shapeImageTexture = TextureHelper.loadTexture(shapeImage)
+//        maskImageTexture = TextureHelper.loadTexture(maskImage)
+//        maskImageExternTexture = TextureHelper.loadTexture(maskExternImage)
     }
 
     //Surface尺寸变化时被调用，比如横竖屏切换
