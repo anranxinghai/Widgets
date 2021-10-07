@@ -15,6 +15,8 @@ import com.pinguo.camera360.gl.util.MatrixHelper
 import com.pinguo.camera360.gl.util.TextureHelper
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
+import kotlin.math.max
+import kotlin.math.min
 
 class AirHockeyRender : GLSurfaceView.Renderer {
     //用来在本地内存中存储数据
@@ -37,6 +39,14 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     private var redMalletPressed = false
     private lateinit var blueMalletPosition: Geometry.Point
     private lateinit var redMalletPosition: Geometry.Point
+    private lateinit var previousBlueMalletPosition: Geometry.Point
+    private lateinit var puckPosition: Geometry.Point
+    private lateinit var puckVector: Geometry.Vector
+
+    private val leftBound = -0.5f
+    private val rightBound = 0.5f
+    private val farBound = -0.8f
+    private val nearBound = 0.8f
 
     constructor(context: Context) {
         this.context = context
@@ -53,8 +63,10 @@ class AirHockeyRender : GLSurfaceView.Renderer {
         texture = TextureHelper.loadTexture(context, R.drawable.air_hockey_surface)
         blueMalletPosition = Geometry.Point(0f, mallet.height / 2f, 0.4f)
         redMalletPosition = Geometry.Point(0f, mallet.height / 2f, -0.4f)
-
+        puckPosition = Geometry.Point(0f, puck.height / 2f, 0f)
+        puckVector = Geometry.Vector(0f, 0f, 0f)
     }
+
     //Surface尺寸变化时被调用，比如横竖屏切换
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
         //设置OpenGL 视点填充满整个surface
@@ -84,11 +96,13 @@ class AirHockeyRender : GLSurfaceView.Renderer {
         multiplyMM(temp, 0, projectionMatrix, 0, modelMatrix, 0)
         System.arraycopy(temp, 0, projectionMatrix, 0, temp.size)
     }
+
     //每一帧绘制，都会回调
     override fun onDrawFrame(gl: GL10?) {
         glClear(GL_COLOR_BUFFER_BIT)
         multiplyMM(viewProjectionMatrix, 0, projectionMatrix, 0, viewMatrix, 0)
         invertM(invertedViewProjectMatrix, 0, viewProjectionMatrix, 0)
+
         positionTableInScene()
         textureProgram.useProgram()
         textureProgram.setUniforms(modelViewProjectionMatrix, texture)
@@ -106,8 +120,20 @@ class AirHockeyRender : GLSurfaceView.Renderer {
         colorProgram.setUniforms(modelViewProjectionMatrix, 0f, 0f, 1f)
         mallet.bindData(colorProgram)
         mallet.draw()
-
-        positionObjectInScene(0f, puck.height / 2f, 0f)
+        puckVector = puckVector.scale(0.88f)
+        puckPosition = puckPosition.translate(puckVector)
+        if (puckPosition.x < leftBound + puck.radius || puckPosition.x > rightBound - puck.radius) {
+            puckVector = Geometry.Vector(-puckVector.x, puckVector.y, puckVector.z)
+        }
+        if (puckPosition.z < farBound + puck.radius || puckPosition.z > nearBound - puck.radius) {
+            puckVector = Geometry.Vector(puckVector.x, puckVector.y, -puckVector.z)
+        }
+        puckPosition = Geometry.Point(
+                clamp(puckPosition.x, leftBound + puck.radius, rightBound - puck.radius),
+                puckPosition.y,
+                clamp(puckPosition.z, farBound + puck.radius, nearBound - puck.radius)
+        )
+        positionObjectInScene(puckPosition.x, puckPosition.y, puckPosition.z)
 //        colorProgram.useProgram()
         colorProgram.setUniforms(modelViewProjectionMatrix, 0.8f, 0.8f, 1f)
         puck.bindData(colorProgram)
@@ -128,6 +154,7 @@ class AirHockeyRender : GLSurfaceView.Renderer {
     }
 
     fun handleTouchPress(normalizedX: Float, normalizedY: Float) {
+        previousBlueMalletPosition = blueMalletPosition
         val ray = convertNormalized2DPointToRay(normalizedX, normalizedY)
         val blueMalletBoundingSphere = Geometry.Sphere(Geometry.Point(blueMalletPosition.x, blueMalletPosition.y, blueMalletPosition.z), mallet.height / 2f)
         val redMalletBoundingSphere = Geometry.Sphere(Geometry.Point(redMalletPosition.x, redMalletPosition.y, redMalletPosition.z), mallet.height / 2f)
@@ -140,14 +167,31 @@ class AirHockeyRender : GLSurfaceView.Renderer {
             val ray = convertNormalized2DPointToRay(normalizedX, normalizedY)
             val plane = Geometry.Plane(Geometry.Point(0f, 0f, 0f), Geometry.Vector(0f, 1f, 0f))
             val touchPoint = Geometry.intersectionPoint(ray, plane)
-            blueMalletPosition = Geometry.Point(touchPoint.x, mallet.height / 2, touchPoint.z)
+            blueMalletPosition = Geometry.Point(
+                    clamp(touchPoint.x, leftBound + mallet.radius, rightBound - mallet.radius), mallet.height / 2,
+                    clamp(touchPoint.z, 0f + mallet.radius, nearBound - mallet.radius)
+            )
+            val distance = Geometry.Vector.vectorBetween(blueMalletPosition, puckPosition).length()
+            if (distance < puck.radius + mallet.radius) {
+                puckVector = Geometry.Vector.vectorBetween(previousBlueMalletPosition, blueMalletPosition)
+            }
         } else if (redMalletPressed) {
             val ray = convertNormalized2DPointToRay(normalizedX, normalizedY)
             val plane = Geometry.Plane(Geometry.Point(0f, 0f, 0f), Geometry.Vector(0f, 1f, 0f))
             val touchPoint = Geometry.intersectionPoint(ray, plane)
-            redMalletPosition = Geometry.Point(touchPoint.x, mallet.height / 2, touchPoint.z)
-
+            redMalletPosition = Geometry.Point(
+                    clamp(touchPoint.x, leftBound + mallet.radius, rightBound - mallet.radius), mallet.height / 2,
+                    clamp(touchPoint.z, farBound + mallet.radius, 0f - mallet.radius)
+            )
+            val distance = Geometry.Vector.vectorBetween(redMalletPosition, puckPosition).length()
+            if (distance < puck.radius + mallet.radius) {
+                puckVector = Geometry.Vector.vectorBetween(previousBlueMalletPosition, redMalletPosition)
+            }
         }
+    }
+
+    private fun clamp(value: Float, min: Float, max: Float): Float {
+        return min(max, max(value, min))
     }
 
 
