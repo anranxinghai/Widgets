@@ -6,6 +6,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.pinguo.camera360.gl.AirHockeyActivity
+import com.pinguo.camera360.gl.ParticlesActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import us.pinguo.foundation.utils.Util
 
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.opengl -> {
                 intent.setClass(this, AirHockeyActivity::class.java)
             }
+            R.id.particles -> {
+                intent.setClass(this, ParticlesActivity::class.java)
+            }
         }
         startActivity(intent)
     }
@@ -39,6 +43,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         widgets.setOnClickListener(this)
         jni.setOnClickListener(this)
         opengl.setOnClickListener(this)
+        particles.setOnClickListener(this)
     }
 
 

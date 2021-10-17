@@ -21,15 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WidgetsActivity"
-            android:theme="@style/Theme.AppCompat"/>
-        <activity android:name=".CameraXActivity"
-            android:theme="@style/Theme.AppCompat"/>
-        <activity android:name=".JNIActivity"
-            android:theme="@style/Theme.AppCompat"/>
-        <activity android:name=".gl.AirHockeyActivity"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
+        <activity
+            android:name=".WidgetsActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".CameraXActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".JNIActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".gl.AirHockeyActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".gl.ParticlesActivity"
+            android:theme="@style/Theme.AppCompat" />
     </application>
 
 </manifest>

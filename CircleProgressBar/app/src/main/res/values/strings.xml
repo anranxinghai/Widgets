@@ -5,4 +5,5 @@
     <string name="widgets">widgets</string>
     <string name="jni">jni</string>
     <string name="opengl">opengl</string>
+    <string name="particles">particles</string>
 </resources>
