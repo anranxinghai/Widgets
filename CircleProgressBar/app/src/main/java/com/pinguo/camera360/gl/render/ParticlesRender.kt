@@ -47,6 +47,8 @@ class ParticlesRender : GLSurfaceView.Renderer {
         redParticleShooter = ParticleShooter(Geometry.Point(-1f, 0f, 0f), particleDirection, Color.rgb(255, 50, 0), angleVarianceInDegrees, speedVariance)
         greenParticleShooter = ParticleShooter(Geometry.Point(0f, 0f, 0f), particleDirection, Color.rgb(25, 255, 25), angleVarianceInDegrees, speedVariance)
         blueParticleShooter = ParticleShooter(Geometry.Point(1f, 0f, 0f), particleDirection, Color.rgb(5, 50, 255), angleVarianceInDegrees, speedVariance)
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_ONE, GL_ONE)
     }
 
     //Surface尺寸变化时被调用，比如横竖屏切换
