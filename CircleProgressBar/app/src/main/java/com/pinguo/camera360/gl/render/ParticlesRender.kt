@@ -5,11 +5,13 @@ import android.graphics.Color
 import android.opengl.GLES20.*
 import android.opengl.GLSurfaceView
 import android.opengl.Matrix.*
+import com.pinguo.camera360.R
 import com.pinguo.camera360.gl.objects.ParticleShooter
 import com.pinguo.camera360.gl.objects.ParticleSystem
 import com.pinguo.camera360.gl.programs.ParticleShaderProgram
 import com.pinguo.camera360.gl.util.Geometry
 import com.pinguo.camera360.gl.util.MatrixHelper
+import com.pinguo.camera360.gl.util.TextureHelper
 import javax.microedition.khronos.egl.EGLConfig
 import javax.microedition.khronos.opengles.GL10
 
@@ -27,6 +29,7 @@ class ParticlesRender : GLSurfaceView.Renderer {
     lateinit var greenParticleShooter: ParticleShooter
     lateinit var blueParticleShooter: ParticleShooter
     private var globalStartTime = 0L
+    private var texture = 0;
 
     constructor(context: Context) {
         this.context = context
@@ -47,6 +50,9 @@ class ParticlesRender : GLSurfaceView.Renderer {
         redParticleShooter = ParticleShooter(Geometry.Point(-1f, 0f, 0f), particleDirection, Color.rgb(255, 50, 0), angleVarianceInDegrees, speedVariance)
         greenParticleShooter = ParticleShooter(Geometry.Point(0f, 0f, 0f), particleDirection, Color.rgb(25, 255, 25), angleVarianceInDegrees, speedVariance)
         blueParticleShooter = ParticleShooter(Geometry.Point(1f, 0f, 0f), particleDirection, Color.rgb(5, 50, 255), angleVarianceInDegrees, speedVariance)
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_ONE, GL_ONE)
+        texture = TextureHelper.loadTexture(context, R.drawable.particle_texture)
     }
 
     //Surface尺寸变化时被调用，比如横竖屏切换
@@ -70,7 +76,7 @@ class ParticlesRender : GLSurfaceView.Renderer {
         blueParticleShooter.addParticles(particleSystem, currentTime, 5)
 
         particleProgram.useProgram()
-        particleProgram.setUniforms(viewProjectionMatrix, currentTime)
+        particleProgram.setUniforms(viewProjectionMatrix, currentTime, texture)
         particleSystem.bindData(particleProgram)
         particleSystem.draw()
     }
