@@ -2,20 +2,66 @@ package com.pinguo.camera360
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
+import com.pinguo.camera360.fragment.MainFragment
+import com.pinguo.camera360.fragment.MainFragment.Companion.BUNDLE_KEY
+import com.pinguo.camera360.fragment.MainFragmentFactory
+import com.pinguo.camera360.fragment.MainFragmentRepository
 import com.pinguo.camera360.gl.AirHockeyActivity
 import com.pinguo.camera360.gl.ParticlesActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import us.pinguo.foundation.utils.Util
 
-class MainActivity : AppCompatActivity() ,View.OnClickListener{
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        val mainFragmentRepository = MainFragmentRepository()
+        val fm = supportFragmentManager
+        fm.fragmentFactory = MainFragmentFactory(mainFragmentRepository)
+        super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        setContentView(R.layout.activity_main)
+        Util.initialize(this)
+        if (savedInstanceState == null) {
+             val bundle = bundleOf(BUNDLE_KEY to "MainFragment")
+             fm.commit {
+                 setReorderingAllowed(true)
+                 add<MainFragment>(R.id.fragment_container_view,args = bundle)
+             }
+
+            val fragment = MainFragment(/*mainFragmentRepository.constructorString*/)
+            fragment.arguments = bundle
+            fm.beginTransaction().add(R.id.fragment_container_view,fragment,"null").commit()
+
+            /*val mainFragmentRepository = MainFragmentRepository()
+            val fm = supportFragmentManager
+            val bundle = bundleOf(BUNDLE_KEY to "MainFragment")
+            val fragment = MainFragment(mainFragmentRepository.constructorString)
+            fragment.arguments = bundle
+            fm.beginTransaction().add(R.id.fragment_container_view,fragment,"null").commit()*/
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        /*val mainFragmentRepository = MainFragmentRepository()
+        val fm = supportFragmentManager
+        val bundle = bundleOf(BUNDLE_KEY to "MainFragment")
+        val fragment = MainFragment(mainFragmentRepository.constructorString)
+        fragment.arguments = bundle
+        fm.beginTransaction().add(R.id.fragment_container_view,fragment,"null").commitAllowingStateLoss()*/
+    }
 
     override fun onClick(v: View?) {
         val intent = Intent()
-        when(v?.id){
-            R.id.camerax->{
+        when (v?.id) {
+            R.id.camerax -> {
                 intent.setClass(this, CameraXActivity::class.java)
             }
             R.id.widgets -> {
@@ -34,16 +80,8 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         startActivity(intent)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_main)
-        Util.initialize(this)
-        camerax.setOnClickListener(this)
-        widgets.setOnClickListener(this)
-        jni.setOnClickListener(this)
-        opengl.setOnClickListener(this)
-        particles.setOnClickListener(this)
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
     }
 
 
