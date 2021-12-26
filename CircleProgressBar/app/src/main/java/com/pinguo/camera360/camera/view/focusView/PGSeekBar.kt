@@ -180,7 +180,7 @@ abstract class PGSeekBar : View {
             val markerRight = (markerCenterX + markerRadius).toInt()
             val markerBottom = (markerCenterY + markerRadius).toInt()
             markerDrawable?.setBounds(markerLeft, markerTop, markerRight, markerBottom)
-            markerDrawable?.draw(canvas)
+            markerDrawable?.draw(canvas!!)
         }
 
         //点击空白（非游标）的地方，在400ms内滚动到点击位置

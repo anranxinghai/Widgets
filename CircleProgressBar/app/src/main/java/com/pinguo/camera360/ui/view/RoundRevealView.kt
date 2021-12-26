@@ -77,7 +77,7 @@ class RoundRevealView : View {
         mPath.addCircle(mWidth.toFloat() / 2, mHeight.toFloat() / 2, mRadius.toFloat()/2, Path.Direction.CW)
 
         canvas?.clipPath(mPath, Region.Op.DIFFERENCE)
-        canvas?.drawBitmap(mBitmap, mMatrix, mPaint)
+        canvas?.drawBitmap(mBitmap!!, mMatrix, mPaint)
     }
 
     fun startReveal() {

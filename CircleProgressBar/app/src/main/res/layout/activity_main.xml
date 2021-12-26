@@ -4,35 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
-
-    <Button
-        android:id="@+id/camerax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/camerax"/>
-
-    <Button
-        android:id="@+id/widgets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/widgets"/>
-
-    <Button
-        android:id="@+id/jni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jni" />
-
-    <Button
-        android:id="@+id/opengl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/opengl" />
-
-    <Button
-        android:id="@+id/particles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/particles" />
+<androidx.fragment.app.FragmentContainerView
+    android:id="@+id/fragment_container_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 
 </LinearLayout>
