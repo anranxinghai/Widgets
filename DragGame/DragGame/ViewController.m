@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIViewController+AboutViewController.h"
 
 @interface ViewController(){
     int curValue;
@@ -16,6 +17,7 @@
 }
 - (IBAction)showAlert:(id)sender;
 - (IBAction)slideMoved:(UISlider *)sender;
+- (IBAction)showAbout:(id)sender;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
 @property (strong, nonatomic) IBOutlet UILabel *roundLabel;
 @property (strong, nonatomic) IBOutlet UITextField *targetLabel;
@@ -95,5 +97,13 @@
     NSLog(@"当前滑竿值是%f",slider.value);
     curValue = lround(slider.value);
     [self updateLabel];
+}
+
+- (IBAction)showAbout:(id)sender {
+    UIStoryboard * mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    ViewController * about = [[ViewController alloc]initWithNibName:@"AboutViewController" bundle:nil];
+    ViewController * about = [mainStoryboard instantiateViewControllerWithIdentifier:@"about"];
+    about.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    [self presentViewController:about animated:YES completion:nil];
 }
 @end

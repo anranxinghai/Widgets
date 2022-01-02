@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */; };
 		93A676FC277833AD00274970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FB277833AD00274970 /* main.m */; };
 		93A676FF277833AD00274970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FE277833AD00274970 /* AppDelegate.m */; };
 		93A67702277833AD00274970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A67701277833AD00274970 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9365F3B6277DF94E00F4E720 /* UIViewController+AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AboutViewController.h"; path = "DragGame/UIViewController+AboutViewController.h"; sourceTree = "<group>"; };
+		9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AboutViewController.m"; path = "DragGame/UIViewController+AboutViewController.m"; sourceTree = "<group>"; };
 		93A676F7277833AC00274970 /* DragGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A676FB277833AD00274970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93A676FD277833AD00274970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +45,8 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				9365F3B6277DF94E00F4E720 /* UIViewController+AboutViewController.h */,
+				9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */,
 				93A676F9277833AC00274970 /* DragGame */,
 				93A676F8277833AC00274970 /* Products */,
 			);
@@ -153,6 +158,7 @@
 				93A67702277833AD00274970 /* ViewController.m in Sources */,
 				93A676FF277833AD00274970 /* AppDelegate.m in Sources */,
 				93A676FC277833AD00274970 /* main.m in Sources */,
+				9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

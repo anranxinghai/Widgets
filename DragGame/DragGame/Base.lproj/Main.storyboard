@@ -86,6 +86,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcN-pk-CLB">
                                 <frame key="frameInset" minX="291" minY="228" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="showAbout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ye4-Eb-HZq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Z-AZ-JuV">
                                 <frame key="frameInset" minX="307" minY="152" width="21" height="21"/>
@@ -114,6 +117,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="99.400299850074973"/>
+        </scene>
+        <!--AboutViewController-->
+        <scene sceneID="hty-Zd-Kai">
+            <objects>
+                <viewController storyboardIdentifier="about" id="2fL-AS-STH" userLabel="AboutViewController" customClass="AboutViewController" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Kh-Gq-fNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="MEl-gf-ZfU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IrS-2y-QSs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-BL-hq7">
+                                <frame key="frameInset" minX="177" minY="205" width="46" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="关闭"/>
+                                <connections>
+                                    <action selector="close:" destination="2fL-AS-STH" eventType="touchUpInside" id="cRM-r1-Vb8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5jv-Gu-PJO">
+                                <frame key="frameInset" minX="67" minY="102" width="240" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">*** 土豪真金 *** 欢迎加入土豪俱乐部!修炼土豪真金的方式很简单，你只需要拖动界面中的滑动条就好了。 你的目标是让滑动条的结点尽可能接近预设的分数，越接近表示你的土豪成分越高。欢迎获取真金!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycw-1o-Sk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="151.57421289355324"/>
         </scene>
     </scenes>
 </document>
