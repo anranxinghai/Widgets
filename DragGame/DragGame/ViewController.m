@@ -1,4 +1,4 @@
-//
+
 //  ViewController.m
 //  DragGame
 //
@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIViewController+AboutViewController.h"
+#import "AVFoundation/AVFoundation.h"
 
 @interface ViewController(){
     int curValue;
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *roundLabel;
 @property (strong, nonatomic) IBOutlet UITextField *targetLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property (strong, nonatomic) AVAudioPlayer * audioPlayer;
 - (IBAction)startOver:(id)sender;
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
 @end
@@ -30,12 +32,16 @@
 @synthesize slider;
 @synthesize targetLabel;
 @synthesize roundLabel;
+@synthesize audioPlayer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIImage * thumbImageNormal = [UIImage imageNamed:@"anranxinghai"];
+    [self.slider setThumbImage:thumbImageNormal forState:UIControlStateHighlighted];
     [self startNewGame];
-    
+    [self updateLabel];
+    [self playBackgroundMusic];
 }
 
 
@@ -49,8 +55,8 @@
     curValue = 50;
     round += 1;
     self.slider.value = curValue;
-    self.targetLabel.text = [NSString stringWithFormat:@"%d", curValue];
     self.roundLabel.text = [NSString stringWithFormat:@"%d",round];
+    [self updateLabel];
 }
 
 -(void) updateLabel{
@@ -64,8 +70,14 @@
 }
 
 - (IBAction)startOver:(id)sender {
+    CATransition * transition = [CATransition animation];
+    transition.type = kCATransition;
+    transition.duration = 3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
     [self startNewGame];
     [self updateLabel];
+    [self.view.layer addAnimation:transition forKey:nil];
 }
 
 
@@ -88,8 +100,6 @@
     int curScore = [self cumputerScore];
     NSString *message = [NSString stringWithFormat:@"当前程度值是%d,我们的目标数值是%d,得分%d",curValue,targetValue,curScore];
     [[[UIAlertView alloc]initWithTitle:@"您好，苍老师" message:message delegate:self cancelButtonTitle:@"本老师知道了" otherButtonTitles:nil, nil] show];
-    
-    
 }
 
 - (IBAction)slideMoved:(UISlider *)sender {
@@ -105,5 +115,19 @@
     ViewController * about = [mainStoryboard instantiateViewControllerWithIdentifier:@"about"];
     about.modalTransitionStyle = UIModalTransitionStylePartialCurl;
     [self presentViewController:about animated:YES completion:nil];
+}
+-(void) playBackgroundMusic{
+    NSString * musicPath = [[NSBundle mainBundle] pathForResource:@"background" ofType:@"mp3"];
+    NSURL * musicUrl = [NSURL fileURLWithPath:musicPath];
+    NSError * error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicUrl error:&error];
+    audioPlayer.numberOfLoops = -1;
+    if (audioPlayer == nil) {
+        NSString * errorInfo = [NSString stringWithString:[error description]];
+        NSLog(@"the error is:%@",errorInfo);
+    } else {
+        [audioPlayer play];
+    }
+    
 }
 @end

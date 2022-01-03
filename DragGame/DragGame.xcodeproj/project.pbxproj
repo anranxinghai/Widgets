@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932E08E22782F3D8006970CA /* anranxinghai.png in Resources */ = {isa = PBXBuildFile; fileRef = 932E08E02782F3D8006970CA /* anranxinghai.png */; };
 		9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */; };
+		936CF3AB2782F458002120C2 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 936CF3AA2782F458002120C2 /* background.mp3 */; };
 		93A676FC277833AD00274970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FB277833AD00274970 /* main.m */; };
 		93A676FF277833AD00274970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FE277833AD00274970 /* AppDelegate.m */; };
 		93A67702277833AD00274970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A67701277833AD00274970 /* ViewController.m */; };
 		93A67705277833AD00274970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67703277833AD00274970 /* Main.storyboard */; };
 		93A67707277833AD00274970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A67706277833AD00274970 /* Assets.xcassets */; };
 		93A6770A277833AD00274970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67708277833AD00274970 /* LaunchScreen.storyboard */; };
+		93BC1517278157EB0003988D /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BC1516278157EB0003988D /* hello.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		932E08E02782F3D8006970CA /* anranxinghai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anranxinghai.png; path = DragGame/Images/anranxinghai.png; sourceTree = "<group>"; };
 		9365F3B6277DF94E00F4E720 /* UIViewController+AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AboutViewController.h"; path = "DragGame/UIViewController+AboutViewController.h"; sourceTree = "<group>"; };
 		9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AboutViewController.m"; path = "DragGame/UIViewController+AboutViewController.m"; sourceTree = "<group>"; };
+		936CF3AA2782F458002120C2 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = DragGame/Audio/background.mp3; sourceTree = "<group>"; };
 		93A676F7277833AC00274970 /* DragGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A676FB277833AD00274970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93A676FD277833AD00274970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,6 +34,7 @@
 		93A67706277833AD00274970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A67709277833AD00274970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93A6770B277833AD00274970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BC1516278157EB0003988D /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = hello.html; path = DragGame/Html/hello.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,9 +48,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		932E08DF2782F3A7006970CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				932E08E02782F3D8006970CA /* anranxinghai.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		936CF3A92782F44A002120C2 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				936CF3AA2782F458002120C2 /* background.mp3 */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				936CF3A92782F44A002120C2 /* Audio */,
+				932E08DF2782F3A7006970CA /* Images */,
+				93BC1513278156CD0003988D /* HTML */,
 				9365F3B6277DF94E00F4E720 /* UIViewController+AboutViewController.h */,
 				9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */,
 				93A676F9277833AC00274970 /* DragGame */,
@@ -82,6 +107,14 @@
 				93A676FB277833AD00274970 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93BC1513278156CD0003988D /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				93BC1516278157EB0003988D /* hello.html */,
+			);
+			name = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +175,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932E08E22782F3D8006970CA /* anranxinghai.png in Resources */,
 				93A6770A277833AD00274970 /* LaunchScreen.storyboard in Resources */,
+				93BC1517278157EB0003988D /* hello.html in Resources */,
+				936CF3AB2782F458002120C2 /* background.mp3 in Resources */,
 				93A67707277833AD00274970 /* Assets.xcassets in Resources */,
 				93A67705277833AD00274970 /* Main.storyboard in Resources */,
 			);

@@ -10,5 +10,6 @@
 
 @interface AboutViewController:UIViewController
 - (IBAction)close:(id)sender;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end
