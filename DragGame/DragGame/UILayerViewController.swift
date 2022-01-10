@@ -12,6 +12,7 @@ import UIKit
 class UILayerViewController:UIViewController{
     private var uiLabel:UILabel?
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = .white
         let layer = CALayer.init()
@@ -26,12 +27,12 @@ class UILayerViewController:UIViewController{
 //        shapeLayer.strokeStart = 0.35
         
         
-        let roundCenter = CGPoint.init(x: 0, y: 0)
+        let roundCenter = CGPoint.init(x: 100, y: 300)
         shapeLayer.path = UIBezierPath.init(arcCenter: roundCenter, radius: 50, startAngle: 180, endAngle: 90, clockwise: true).cgPath
 //        shapeLayer.frame = CGRect.init(x: 50, y: 250, width: 50, height: 50)
-//        shapeLayer.bounds = CGRect.init(x: 100, y: 300, width: 50, height: 50)
-        shapeLayer.position = CGPoint.init(x: 300, y: 300)
-//        shapeLayer.anchorPoint = CGPoint.init(x: 100/150, y: 300/350)
+        shapeLayer.bounds = CGRect.init(x: 100, y:300,width: 50, height: 50)
+        shapeLayer.position = CGPoint.init(x:100, y: 300)
+        shapeLayer.anchorPoint = CGPoint.init(x:0, y:0)
         
         let shapeAnimation = CABasicAnimation.init()
         shapeAnimation.duration = 10
