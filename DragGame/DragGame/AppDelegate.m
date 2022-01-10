@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DragGame-Bridging-Header.h"
+#import "DragGame-Swift.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    HomePageViewController * homePageViewController = [[HomePageViewController alloc] init];
+    UINavigationController * navi = [UINavigationController alloc];
+    [navi initWithRootViewController:homePageViewController];
+    self.window.rootViewController = navi;
     return YES;
 }
 
