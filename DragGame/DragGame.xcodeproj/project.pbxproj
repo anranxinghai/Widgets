@@ -15,6 +15,7 @@
 		9381F4CE2785C8CA00B48B90 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381F4CD2785C8CA00B48B90 /* HomePageViewController.swift */; };
 		9398CA91278C21E9003E3A27 /* UIImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398CA90278C21E9003E3A27 /* UIImageViewController.swift */; };
 		9398CA93278C416F003E3A27 /* UILayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398CA92278C416F003E3A27 /* UILayerViewController.swift */; };
+		9398CA95278D41DD003E3A27 /* UIParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398CA94278D41DD003E3A27 /* UIParentViewController.swift */; };
 		93A676FC277833AD00274970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FB277833AD00274970 /* main.m */; };
 		93A676FF277833AD00274970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A676FE277833AD00274970 /* AppDelegate.m */; };
 		93A67702277833AD00274970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A67701277833AD00274970 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 		9381F4CD2785C8CA00B48B90 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		9398CA90278C21E9003E3A27 /* UIImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewController.swift; sourceTree = "<group>"; };
 		9398CA92278C416F003E3A27 /* UILayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayerViewController.swift; sourceTree = "<group>"; };
+		9398CA94278D41DD003E3A27 /* UIParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIParentViewController.swift; sourceTree = "<group>"; };
 		93A676F7277833AC00274970 /* DragGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A676FB277833AD00274970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93A676FD277833AD00274970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				9398CA94278D41DD003E3A27 /* UIParentViewController.swift */,
 				9398CA90278C21E9003E3A27 /* UIImageViewController.swift */,
 				936FDA03278B28CC00A03E46 /* UIButton.swift */,
 				936CF3A92782F44A002120C2 /* Audio */,
@@ -218,6 +221,7 @@
 				936FDA04278B28CC00A03E46 /* UIButton.swift in Sources */,
 				9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */,
 				9398CA91278C21E9003E3A27 /* UIImageViewController.swift in Sources */,
+				9398CA95278D41DD003E3A27 /* UIParentViewController.swift in Sources */,
 				936FDA022789D55900A03E46 /* UILabelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

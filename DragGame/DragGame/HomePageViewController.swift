@@ -14,7 +14,7 @@ let SCREENWIDTH = UIScreen.main.bounds.width
 let SCREENHEIGHT = UIScreen.main.bounds.height
 class HomePageViewController:UIViewController{
     private var uiTable:UITableView?
-    private var dataSource = ["GAME","UILabel","UIButton","UIImageView","UILayer"]
+    private var dataSource = ["GAME","UILabel","UIButton","UIImageView","UILayer","UIParentView"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -65,6 +65,8 @@ extension HomePageViewController:UITableViewDelegate{
             vc = UIImageViewController.init()
         case 4:
             vc = UILayerViewController.init()
+        case 5:
+            vc = UIParentViewController.init()
         default:
             break
         }
