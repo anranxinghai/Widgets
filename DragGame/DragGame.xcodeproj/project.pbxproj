@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		932E08E22782F3D8006970CA /* anranxinghai.png in Resources */ = {isa = PBXBuildFile; fileRef = 932E08E02782F3D8006970CA /* anranxinghai.png */; };
+		9345547D2791D5C3004C691C /* GestureRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345547C2791D5C3004C691C /* GestureRecognizerViewController.swift */; };
+		9345547F27958897004C691C /* UIControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345547E27958897004C691C /* UIControlViewController.swift */; };
+		934554812795C333004C691C /* UICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934554802795C333004C691C /* UICollectionViewController.swift */; };
 		9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */; };
 		936CF3AB2782F458002120C2 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 936CF3AA2782F458002120C2 /* background.mp3 */; };
 		936FDA022789D55900A03E46 /* UILabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FDA012789D55900A03E46 /* UILabelViewController.swift */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		932E08E02782F3D8006970CA /* anranxinghai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anranxinghai.png; path = DragGame/Images/anranxinghai.png; sourceTree = "<group>"; };
+		9345547C2791D5C3004C691C /* GestureRecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerViewController.swift; sourceTree = "<group>"; };
+		9345547E27958897004C691C /* UIControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlViewController.swift; sourceTree = "<group>"; };
+		934554802795C333004C691C /* UICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewController.swift; sourceTree = "<group>"; };
 		9365F3B6277DF94E00F4E720 /* UIViewController+AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AboutViewController.h"; path = "DragGame/UIViewController+AboutViewController.h"; sourceTree = "<group>"; };
 		9365F3B7277DF94E00F4E720 /* UIViewController+AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AboutViewController.m"; path = "DragGame/UIViewController+AboutViewController.m"; sourceTree = "<group>"; };
 		936CF3AA2782F458002120C2 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = DragGame/Audio/background.mp3; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		93A676F9277833AC00274970 /* DragGame */ = {
 			isa = PBXGroup;
 			children = (
+				9345547E27958897004C691C /* UIControlViewController.swift */,
 				93A676FD277833AD00274970 /* AppDelegate.h */,
 				93A676FE277833AD00274970 /* AppDelegate.m */,
 				93A67700277833AD00274970 /* ViewController.h */,
@@ -117,6 +124,8 @@
 				9381F4CC2785C8C900B48B90 /* DragGame-Bridging-Header.h */,
 				936FDA012789D55900A03E46 /* UILabelViewController.swift */,
 				9398CA92278C416F003E3A27 /* UILayerViewController.swift */,
+				9345547C2791D5C3004C691C /* GestureRecognizerViewController.swift */,
+				934554802795C333004C691C /* UICollectionViewController.swift */,
 			);
 			path = DragGame;
 			sourceTree = "<group>";
@@ -215,13 +224,16 @@
 			files = (
 				93A67702277833AD00274970 /* ViewController.m in Sources */,
 				93A676FF277833AD00274970 /* AppDelegate.m in Sources */,
+				9345547F27958897004C691C /* UIControlViewController.swift in Sources */,
 				93A676FC277833AD00274970 /* main.m in Sources */,
 				9398CA93278C416F003E3A27 /* UILayerViewController.swift in Sources */,
 				9381F4CE2785C8CA00B48B90 /* HomePageViewController.swift in Sources */,
+				934554812795C333004C691C /* UICollectionViewController.swift in Sources */,
 				936FDA04278B28CC00A03E46 /* UIButton.swift in Sources */,
 				9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */,
 				9398CA91278C21E9003E3A27 /* UIImageViewController.swift in Sources */,
 				9398CA95278D41DD003E3A27 /* UIParentViewController.swift in Sources */,
+				9345547D2791D5C3004C691C /* GestureRecognizerViewController.swift in Sources */,
 				936FDA022789D55900A03E46 /* UILabelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
