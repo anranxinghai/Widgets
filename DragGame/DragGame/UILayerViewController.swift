@@ -24,15 +24,18 @@ class UILayerViewController:UIViewController{
         shapeLayer.strokeColor = UIColor.green.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 2
-//        shapeLayer.strokeStart = 0.35
+        shapeLayer.strokeStart = 0.35
+        
+//        shapeLayer.backgroundColor = UIColor.cyan.cgColor
         
         
         let roundCenter = CGPoint.init(x: 100, y: 300)
-        shapeLayer.path = UIBezierPath.init(arcCenter: roundCenter, radius: 50, startAngle: 180, endAngle: 90, clockwise: true).cgPath
-//        shapeLayer.frame = CGRect.init(x: 50, y: 250, width: 50, height: 50)
-        shapeLayer.bounds = CGRect.init(x: 100, y:300,width: 50, height: 50)
-        shapeLayer.position = CGPoint.init(x:100, y: 300)
-        shapeLayer.anchorPoint = CGPoint.init(x:0, y:0)
+        shapeLayer.path = UIBezierPath.init(arcCenter: roundCenter, radius: 50, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true).cgPath
+//        shapeLayer.frame = CGRect.init(x: 100, y: 300, width: 100, height: 100)
+        shapeLayer.bounds = CGRect.init(x: 50, y: 250, width: 100, height: 100)
+//        shapeLayer.position = CGPoint.init(x: 50, y: 50)
+//        shapeLayer.anchorPoint = CGPoint.init(x: 1, y: 1)
+        
         
         let shapeAnimation = CABasicAnimation.init()
         shapeAnimation.duration = 10
@@ -41,15 +44,19 @@ class UILayerViewController:UIViewController{
         shapeAnimation.toValue = 45
         shapeAnimation.repeatCount = 1
 
-        
+
         shapeLayer.add(shapeAnimation, forKey: nil)
 
         
         view.layer.addSublayer(layer)
         view.layer.addSublayer(shapeLayer)
         
+        print("position:\(shapeLayer.position)")
+        print("frame:\(shapeLayer.frame)")
+        print("bounds:\(shapeLayer.bounds)")
+        print("anchorPoint:\(shapeLayer.anchorPoint)")
         
-        
+//        shapeLayer.transform = CATransform3DMakeRotation(45, 0, 0, 1)
         
         
     }
