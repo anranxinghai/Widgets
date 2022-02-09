@@ -26,6 +26,7 @@
 		93A67707277833AD00274970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A67706277833AD00274970 /* Assets.xcassets */; };
 		93A6770A277833AD00274970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67708277833AD00274970 /* LaunchScreen.storyboard */; };
 		93BC1517278157EB0003988D /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BC1516278157EB0003988D /* hello.html */; };
+		93D824F427B2C56B00F8BE43 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F327B2C56B00F8BE43 /* Landmarks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		93A67709277833AD00274970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93A6770B277833AD00274970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93BC1516278157EB0003988D /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = hello.html; path = DragGame/Html/hello.html; sourceTree = "<group>"; };
+		93D824F327B2C56B00F8BE43 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				93D824F327B2C56B00F8BE43 /* Landmarks.swift */,
 				9398CA94278D41DD003E3A27 /* UIParentViewController.swift */,
 				9398CA90278C21E9003E3A27 /* UIImageViewController.swift */,
 				936FDA03278B28CC00A03E46 /* UIButton.swift */,
@@ -235,6 +238,7 @@
 				9398CA95278D41DD003E3A27 /* UIParentViewController.swift in Sources */,
 				9345547D2791D5C3004C691C /* GestureRecognizerViewController.swift in Sources */,
 				936FDA022789D55900A03E46 /* UILabelViewController.swift in Sources */,
+				93D824F427B2C56B00F8BE43 /* Landmarks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DragGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anranxinghai.crazydrag.DragGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,7 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DragGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anranxinghai.crazydrag.DragGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
