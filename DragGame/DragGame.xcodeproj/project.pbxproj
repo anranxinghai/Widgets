@@ -26,7 +26,9 @@
 		93A67707277833AD00274970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A67706277833AD00274970 /* Assets.xcassets */; };
 		93A6770A277833AD00274970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67708277833AD00274970 /* LaunchScreen.storyboard */; };
 		93BC1517278157EB0003988D /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BC1516278157EB0003988D /* hello.html */; };
-		93D824F427B2C56B00F8BE43 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F327B2C56B00F8BE43 /* Landmarks.swift */; };
+		93D824F427B2C56B00F8BE43 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */; };
+		93D824F627B411C900F8BE43 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F527B411C900F8BE43 /* CircleImage.swift */; };
+		93D824FA27B4E0F800F8BE43 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F927B4E0F800F8BE43 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,9 @@
 		93A67709277833AD00274970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93A6770B277833AD00274970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93BC1516278157EB0003988D /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = hello.html; path = DragGame/Html/hello.html; sourceTree = "<group>"; };
-		93D824F327B2C56B00F8BE43 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
+		93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		93D824F527B411C900F8BE43 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		93D824F927B4E0F800F8BE43 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +92,9 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
-				93D824F327B2C56B00F8BE43 /* Landmarks.swift */,
+				93D824F827B4E0DD00F8BE43 /* SwiftUI */,
+				93D824F527B411C900F8BE43 /* CircleImage.swift */,
+				93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */,
 				9398CA94278D41DD003E3A27 /* UIParentViewController.swift */,
 				9398CA90278C21E9003E3A27 /* UIImageViewController.swift */,
 				936FDA03278B28CC00A03E46 /* UIButton.swift */,
@@ -147,6 +153,14 @@
 				93BC1516278157EB0003988D /* hello.html */,
 			);
 			name = HTML;
+			sourceTree = "<group>";
+		};
+		93D824F827B4E0DD00F8BE43 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				93D824F927B4E0F800F8BE43 /* MapView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A67702277833AD00274970 /* ViewController.m in Sources */,
+				93D824FA27B4E0F800F8BE43 /* MapView.swift in Sources */,
 				93A676FF277833AD00274970 /* AppDelegate.m in Sources */,
 				9345547F27958897004C691C /* UIControlViewController.swift in Sources */,
 				93A676FC277833AD00274970 /* main.m in Sources */,
@@ -238,7 +253,8 @@
 				9398CA95278D41DD003E3A27 /* UIParentViewController.swift in Sources */,
 				9345547D2791D5C3004C691C /* GestureRecognizerViewController.swift in Sources */,
 				936FDA022789D55900A03E46 /* UILabelViewController.swift in Sources */,
-				93D824F427B2C56B00F8BE43 /* Landmarks.swift in Sources */,
+				93D824F427B2C56B00F8BE43 /* LandmarkDetail.swift in Sources */,
+				93D824F627B411C900F8BE43 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
