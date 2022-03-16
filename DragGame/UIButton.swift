@@ -9,6 +9,8 @@
 import Foundation
 class UIButtonViewController:UIViewController{
     private var uiButton:UIButton!
+    
+    var changeName:ChangeLocationNameDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -32,10 +34,12 @@ class UIButtonViewController:UIViewController{
 //        sender.isSelected  = !sender.isSelected
         if(sender.isSelected) {
             uiButton.setTitle("我被选中了", for: .normal)
+            changeName?.changeName()
         }
         else {
             uiButton.setTitle("没有选中我", for: .normal)
         }
             
     }
+    
 }

@@ -29,6 +29,7 @@
 		93D824F427B2C56B00F8BE43 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */; };
 		93D824F627B411C900F8BE43 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F527B411C900F8BE43 /* CircleImage.swift */; };
 		93D824FA27B4E0F800F8BE43 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F927B4E0F800F8BE43 /* MapView.swift */; };
+		93E4DBAE27DE3EA6005A3C39 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4DBAD27DE3EA6005A3C39 /* LandmarkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		93D824F527B411C900F8BE43 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		93D824F927B4E0F800F8BE43 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		93E4DBAD27DE3EA6005A3C39 /* LandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				93E4DBAD27DE3EA6005A3C39 /* LandmarkViewController.swift */,
 				93D824F827B4E0DD00F8BE43 /* SwiftUI */,
 				93D824F527B411C900F8BE43 /* CircleImage.swift */,
 				93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */,
@@ -246,6 +249,7 @@
 				93A676FC277833AD00274970 /* main.m in Sources */,
 				9398CA93278C416F003E3A27 /* UILayerViewController.swift in Sources */,
 				9381F4CE2785C8CA00B48B90 /* HomePageViewController.swift in Sources */,
+				93E4DBAE27DE3EA6005A3C39 /* LandmarkViewController.swift in Sources */,
 				934554812795C333004C691C /* UICollectionViewController.swift in Sources */,
 				936FDA04278B28CC00A03E46 /* UIButton.swift in Sources */,
 				9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */,

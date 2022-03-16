@@ -61,4 +61,9 @@ class UILayerViewController:UIViewController{
         
     }
     
+    
+}
+
+@objc protocol ChangeLocationNameDelegate{
+    func changeName()
 }

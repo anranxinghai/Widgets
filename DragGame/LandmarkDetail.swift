@@ -14,8 +14,10 @@ struct Landmarks: View {
             MapView().frame(width: 300).edgesIgnoringSafeArea(.top)
             CircleImage().offset(y:-130)
                 .padding(.bottom,-130)
+            LandmarkViewController()
             VStack (alignment: .leading){
                 Text("Turtle Rock").font(.largeTitle)
+                
                 HStack {
                     
                     Text("Josha Three Nation Park").font(.subheadline)
