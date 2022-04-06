@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '13.0'
+
+target 'DragGame' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'SnapKit'		#Swift自动布局库
+  pod 'Moya'      #网络请求库
+  pod 'Kingfisher'#下载库
+  pod 'SwiftyJSON'#Json解析库
+
+  # Pods for DragGame	
+
+end
