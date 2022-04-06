@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Moya
+import SwiftUI
 class UIButtonViewController:UIViewController{
     private var uiButton:UIButton!
     
@@ -39,7 +41,74 @@ class UIButtonViewController:UIViewController{
         else {
             uiButton.setTitle("没有选中我", for: .normal)
         }
+        
+        let provider = MoyaProvider<GitHub>()
+        provider.request(.weather){ result in
+            var message = "Could't access API"
+            if case let .success(response) = result{
+                let jsonString = try? response.mapString()
+                message = jsonString ?? message
+                
+                    let json = try? response.mapJSON()
+                print("\(json!)")
+            }
+            if case let .failure(error) = result{
+                print("\(error.errorDescription)")
+            }
+//            self.showAlert("Zen",message:message)
+            
+        }
             
     }
+    
+}
+public enum GitHub{
+    case zen
+    case useProfile(String)
+    case useRepositories(String)
+    case weather
+}
+
+extension GitHub:TargetType{
+    public var baseURL: URL {
+        return URL(string: "http://www.weather.com.cn")!
+    }
+    
+    public var path: String {
+        switch self {
+        case .zen: return "/zen"
+        case .useProfile(let name):
+            return "/users/\(name)"
+        case .useRepositories(let name):
+            return "/users/\(name)/repos"
+        case .weather: return "/data/cityinfo/101010100.html"
+        }
+    }
+    
+    public var method: Moya.Method {
+        return .get
+    }
+    
+    public var headers: [String : String]? {
+        return nil
+    }
+    
+    
+    public var task: Task {
+        switch self{
+        case .useRepositories:
+            return .requestParameters(parameters: ["sort":"push"], encoding: URLEncoding.default)
+        default: return .requestPlain
+        }
+    }
+    public var validationType:ValidationType{
+            switch self{
+            case .zen:
+                return .successCodes
+            default:
+                return .none
+            }
+        }
+    
     
 }

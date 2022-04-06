@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import SnapKit
+//import Alamofire
+import Kingfisher
 class UIImageViewController:UIViewController{
     private var uiImage:UIImageView!
     override func viewDidLoad() {
@@ -14,14 +17,13 @@ class UIImageViewController:UIViewController{
         view.backgroundColor = .white
         uiImage = UIImageView.init()
         view.addSubview(uiImage)
-        uiImage.translatesAutoresizingMaskIntoConstraints = false
-        uiImage.topAnchor.constraint(equalTo: view.topAnchor,constant: 100).isActive = true
-        uiImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        uiImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        uiImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        uiImage.snp.makeConstraints{(make)in
+            make.width.height.equalTo(100)
+            make.center.equalToSuperview()
+
+        }
+    
         let image = UIImage.init(imageLiteralResourceName: "anranxinghai.png")
         uiImage.image = image
-        
-        
     }
 }
