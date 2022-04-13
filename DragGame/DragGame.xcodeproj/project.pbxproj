@@ -26,6 +26,7 @@
 		93A67705277833AD00274970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67703277833AD00274970 /* Main.storyboard */; };
 		93A67707277833AD00274970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A67706277833AD00274970 /* Assets.xcassets */; };
 		93A6770A277833AD00274970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A67708277833AD00274970 /* LaunchScreen.storyboard */; };
+		93AFC0F52805D6F700B44658 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AFC0F42805D6F700B44658 /* WeatherInfo.swift */; };
 		93BC1517278157EB0003988D /* hello.html in Resources */ = {isa = PBXBuildFile; fileRef = 93BC1516278157EB0003988D /* hello.html */; };
 		93D824F427B2C56B00F8BE43 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */; };
 		93D824F627B411C900F8BE43 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D824F527B411C900F8BE43 /* CircleImage.swift */; };
@@ -60,6 +61,7 @@
 		93A67706277833AD00274970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A67709277833AD00274970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93A6770B277833AD00274970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93AFC0F42805D6F700B44658 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		93BC1516278157EB0003988D /* hello.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = hello.html; path = DragGame/Html/hello.html; sourceTree = "<group>"; };
 		93D824F327B2C56B00F8BE43 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		93D824F527B411C900F8BE43 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		93A676EE277833AC00274970 = {
 			isa = PBXGroup;
 			children = (
+				93AFC0F32805D6CD00B44658 /* Bean */,
 				93E4DBAD27DE3EA6005A3C39 /* LandmarkViewController.swift */,
 				93D824F827B4E0DD00F8BE43 /* SwiftUI */,
 				93D824F527B411C900F8BE43 /* CircleImage.swift */,
@@ -164,6 +167,14 @@
 				93A676FB277833AD00274970 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93AFC0F32805D6CD00B44658 /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				93AFC0F42805D6F700B44658 /* WeatherInfo.swift */,
+			);
+			path = Bean;
 			sourceTree = "<group>";
 		};
 		93BC1513278156CD0003988D /* HTML */ = {
@@ -327,6 +338,7 @@
 				9398CA93278C416F003E3A27 /* UILayerViewController.swift in Sources */,
 				9381F4CE2785C8CA00B48B90 /* HomePageViewController.swift in Sources */,
 				93E4DBAE27DE3EA6005A3C39 /* LandmarkViewController.swift in Sources */,
+				93AFC0F52805D6F700B44658 /* WeatherInfo.swift in Sources */,
 				934554812795C333004C691C /* UICollectionViewController.swift in Sources */,
 				936FDA04278B28CC00A03E46 /* UIButton.swift in Sources */,
 				9365F3B8277DF94E00F4E720 /* UIViewController+AboutViewController.m in Sources */,

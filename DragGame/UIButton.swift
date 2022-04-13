@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 import SwiftUI
+import SwiftyJSON
 class UIButtonViewController:UIViewController{
     private var uiButton:UIButton!
     
@@ -49,8 +50,9 @@ class UIButtonViewController:UIViewController{
                 let jsonString = try? response.mapString()
                 message = jsonString ?? message
                 
-                    let json = try? response.mapJSON()
-                print("\(json!)")
+                let json = try? jsonString!.data(using: .utf8)
+                let tData = JSON(json)
+                print("\(tData["weatherinfo"]["city"]) 的 温度是\(tData["weatherinfo"]["temp1"])~\(tData["weatherinfo"]["temp2"])")
             }
             if case let .failure(error) = result{
                 print("\(error.errorDescription)")
