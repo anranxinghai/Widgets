@@ -73,8 +73,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.opengl -> {
                 intent.setClass(this, AirHockeyActivity::class.java)
             }
-            R.id.particles -> {
-                intent.setClass(this, ParticlesActivity::class.java)
+            R.id.surfaceView -> {
+                intent.setClass(this, SurfaceViewActivity::class.java)
+            }
+            R.id.textureView -> {
+                intent.setClass(this, TextureViewActivity::class.java)
             }
         }
         startActivity(intent)

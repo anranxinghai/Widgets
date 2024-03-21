@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pinguo.camera360">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-feature android:glEsVersion="0x00020000"></uses-feature>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -35,6 +34,15 @@
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".gl.ParticlesActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".SurfaceViewActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".TextureViewActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name=".MediaPlayerActivity"
             android:theme="@style/Theme.AppCompat" />
     </application>
 

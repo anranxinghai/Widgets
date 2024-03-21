@@ -10,7 +10,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.pinguo.camera360.CameraXActivity
 import com.pinguo.camera360.JNIActivity
+import com.pinguo.camera360.MediaPlayerActivity
 import com.pinguo.camera360.R
+import com.pinguo.camera360.SurfaceViewActivity
+import com.pinguo.camera360.TextureViewActivity
 import com.pinguo.camera360.WidgetsActivity
 import com.pinguo.camera360.gl.AirHockeyActivity
 import com.pinguo.camera360.gl.ParticlesActivity
@@ -56,6 +59,9 @@ class MainFragment : Fragment/*(R.layout.fragment_main)*/, View.OnClickListener 
         jni.setOnClickListener(this)
         opengl.setOnClickListener(this)
         particles.setOnClickListener(this)
+        surfaceView.setOnClickListener(this)
+        textureView.setOnClickListener(this)
+        mediaPlayer.setOnClickListener(this)
         fragmentBack.text = "${bundleString}-${constructorString}"
         viewLifecycleOwner.lifecycle.addObserver(mainViewModel)
     }
@@ -78,6 +84,15 @@ class MainFragment : Fragment/*(R.layout.fragment_main)*/, View.OnClickListener 
             }
             R.id.particles -> {
                 intent.setClass(activity, ParticlesActivity::class.java)
+            }
+            R.id.surfaceView -> {
+                intent.setClass(activity, SurfaceViewActivity::class.java)
+            }
+            R.id.textureView -> {
+                intent.setClass(activity, TextureViewActivity::class.java)
+            }
+            R.id.mediaPlayer -> {
+                intent.setClass(activity, MediaPlayerActivity::class.java)
             }
         }
         startActivity(intent)
